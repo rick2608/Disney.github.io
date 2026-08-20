@@ -1,0 +1,388 @@
+/* Remove as margens e espaçamentos padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estiliza o corpo inteiro da página */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+
+    /* Cria um fundo com degradê azul escuro */
+    background:
+        radial-gradient(
+            circle at top,
+            #2563eb 0%,
+            #0f172a 45%,
+            #020617 100%
+        );
+
+    color: white;
+}
+
+/* Define o tamanho e posicionamento da área principal */
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 0;
+    text-align: center;
+}
+
+/* Estiliza o título principal */
+h1 {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+
+    /* Cria um efeito de degradê no texto */
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #93c5fd
+    );
+
+    /* Faz o degradê aparecer dentro do texto */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Estiliza o subtítulo */
+.subtitulo {
+    color: #cbd5e1;
+    font-size: 17px;
+    margin-bottom: 35px;
+}
+
+/* Organiza o campo de busca e o botão */
+.area-busca {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+/* Estiliza o campo de pesquisa */
+.area-busca input {
+    width: 420px;
+    padding: 15px 18px;
+
+    border: 2px solid #334155;
+    border-radius: 12px;
+
+    background: rgba(15, 23, 42, 0.85);
+
+    color: white;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+/* Define a cor do texto de exemplo do input */
+.area-busca input::placeholder {
+    color: #94a3b8;
+}
+
+/* Altera o input quando ele recebe foco */
+.area-busca input:focus {
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 0 20px
+        rgba(59, 130, 246, 0.35);
+}
+
+/* Estiliza o botão de busca */
+.area-busca button {
+    padding: 15px 25px;
+
+    border: none;
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3b82f6,
+            #1e3a8a
+        );
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+/* Efeito quando passa o mouse no botão */
+.area-busca button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(59, 130, 246, 0.35);
+}
+
+/* Estiliza o contador de personagens */
+#quantidade {
+    display: inline-block;
+
+    padding: 10px 18px;
+
+    margin-bottom: 35px;
+
+    border-radius: 30px;
+
+    background: rgba(30, 41, 59, 0.8);
+
+    border: 1px solid #334155;
+
+    color: #bfdbfe;
+
+    font-weight: bold;
+}
+
+/* Cria uma grade para os cards */
+.personagens {
+    display: grid;
+
+    /* Cria 4 colunas */
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+/* Estiliza cada card */
+.card {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        rgba(30, 41, 59, 0.9);
+
+    border: 1px solid #334155;
+
+    border-radius: 18px;
+
+    min-height: 300px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.3);
+
+    transition: 0.35s;
+}
+
+/* Efeito quando o mouse passa sobre o card */
+.card:hover {
+    transform: translateY(-8px);
+
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 15px 35px
+        rgba(59, 130, 246, 0.25);
+}
+
+/* Área onde a imagem fica */
+.imagem {
+    width: 100%;
+    height: 250px;
+
+    overflow: hidden;
+
+    background: #020617;
+}
+
+/* Estiliza a imagem do personagem */
+.imagem img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.4s;
+}
+
+/* Aumenta levemente a imagem ao passar o mouse */
+.card:hover .imagem img {
+    transform: scale(1.08);
+}
+
+/* Área onde fica o nome */
+.nome {
+    min-height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 15px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    color: #dbeafe;
+}
+
+/* Estiliza a mensagem de carregamento */
+#carregando {
+    margin: 30px 0;
+
+    color: #93c5fd;
+}
+
+/* Estiliza o botão "Carregar Mais" */
+#botaoCarregar {
+    margin-top: 40px;
+
+    padding: 15px 30px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3b82f6,
+            #1e3a8a
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+/* Efeito ao passar o mouse no botão */
+#botaoCarregar:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(59, 130, 246, 0.4);
+}
+
+/* Mostra a página atual */
+#paginaAtual {
+    margin-top: 18px;
+
+    color: #94a3b8;
+
+    font-size: 15px;
+}
+
+
+/* ========================= */
+/* RESPONSIVIDADE             */
+/* ========================= */
+
+/* Quando a tela tiver até 950px */
+@media (max-width: 950px) {
+
+    /* Diminui de 4 para 3 colunas */
+    .personagens {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
+
+
+/* Quando a tela tiver até 700px */
+@media (max-width: 700px) {
+
+    /* Diminui o espaço interno */
+    .container {
+        padding: 35px 0;
+    }
+
+    /* Diminui o tamanho do título */
+    h1 {
+        font-size: 32px;
+    }
+
+    /* Coloca o campo e o botão um embaixo do outro */
+    .area-busca {
+        flex-direction: column;
+    }
+
+    /* Faz o campo ocupar toda a largura */
+    .area-busca input {
+        width: 100%;
+    }
+
+    /* Faz o botão ocupar toda a largura */
+    .area-busca button {
+        width: 100%;
+    }
+
+    /* Mostra 2 cards por linha */
+    .personagens {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 15px;
+    }
+
+    /* Diminui o tamanho das imagens */
+    .imagem {
+        height: 210px;
+    }
+
+    /* Diminui a altura dos cards */
+    .card {
+        min-height: 260px;
+    }
+
+}
+
+
+/* Quando a tela tiver até 450px */
+@media (max-width: 450px) {
+
+    /* Diminui ainda mais o título */
+    h1 {
+        font-size: 27px;
+    }
+
+    /* Diminui o tamanho do subtítulo */
+    .subtitulo {
+        font-size: 14px;
+    }
+
+    /* Mostra somente um card por linha */
+    .personagens {
+        grid-template-columns: 1fr;
+    }
+
+    /* Aumenta novamente a imagem para ocupar o card */
+    .imagem {
+        height: 280px;
+    }
+
+    /* Aumenta a altura do card */
+    .card {
+        min-height: 340px;
+    }
+
+}
