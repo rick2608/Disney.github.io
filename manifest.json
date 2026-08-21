@@ -1,0 +1,20 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "Disney World",
+  "orientation": "portrait",
+  "scope": "/",
+  "short_name": "Disney",
+  "start_url": "/Disney.github.io/",
+  "theme_color": "#ffffff",
+  "description": "O aplicativo permite pesquisar e visualizar personagens da Disney por meio de uma API, exibindo seus nomes e imagens em cards. Também permite carregar mais personagens e conta com uma imagem padrão para personagens sem imagem disponível.",
+  "lang": "pt",
+  "display_override": [
+    "browser",
+    "fullscreen",
+    "window-controls-overlay",
+    "minimal-ui",
+    "standalone"
+  ]
+}
