@@ -37,6 +37,7 @@ h1 {
     font-weight: 800;
     letter-spacing: 3px;
     margin-bottom: 12px;
+    font-family: 'Pacifico', cursive;
 
     /* Cria um efeito de degradê no texto */
     background: linear-gradient(
