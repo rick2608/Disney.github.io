@@ -16,8 +16,7 @@
     "window-controls-overlay",
     "minimal-ui",
     "standalone"
-  ]
-},
+  ],
 
 "icons": [
       {
@@ -32,3 +31,5 @@
            "type": "image/png"
       }
   ]
+
+}
