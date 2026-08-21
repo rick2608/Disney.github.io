@@ -392,3 +392,33 @@ async function buscarPersonagem() {
 // Executa a função assim que o site é aberto.
 // Isso faz os primeiros 50 personagens aparecerem automaticamente.
 carregarPersonagens();
+
+// ==========================================
+// SERVICE WORKER
+// ==========================================
+
+if ('serviceWorker' in navigator) {
+
+    window.addEventListener(
+        'load',
+        () => {
+
+            navigator.serviceWorker
+                .register(
+                    '/Disney.github.io/pwabuilder-sw.js'
+                )
+                .catch(
+                    (erro) => {
+
+                        console.error(
+                            'Erro ao registrar Service Worker:',
+                            erro
+                        );
+
+                    }
+                );
+
+        }
+    );
+
+}
